@@ -18,8 +18,8 @@ jobs:
           path: community
       - name: Install yq
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
       - name: Remove individual access to repos
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
